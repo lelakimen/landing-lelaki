@@ -100,6 +100,16 @@
       color: #ccc;
     }
 
+    .product-image {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      margin: 40px auto;
+      display: block;
+    }
+
     footer {
       padding: 20px;
       text-align: center;
@@ -138,20 +148,32 @@
     </div>
   </section>
 
+  <!-- Gambar produk -->
+  <section class="section">
+    <img 
+      src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi6LRxLNHjzy4bc3-rATymxonvJKSDYRN-eNE69-vJizHnj-7MSEpsBPV3pZOnpaWAIo6e5dNs1DyXBmseDBpme-iOzlOoJwTTv-2vfdl6jd_Zn_Vqzs_c7OYIPY6wH2AauGa7EdmH_4Yjmix-nBZbNaUTyaZ_tVFcj0Axm_ljCsOf87URKXBDi8iOT0wU/w308-h400/1742518173299.jpg" 
+      alt="Parfum Lelaki.Men" class="product-image"
+    />
+  </section>
+
+  <!-- Tentang -->
   <section class="section" id="about">
     <h2>Tentang Kami</h2>
     <p>LELAKI.MEN bukan sekadar brand, tapi gaya hidup. Kami percaya bahwa pria modern perlu tampil maksimal dengan kesederhanaan yang kuat. Parfum kami dirancang untuk memperkuat aura Anda tanpa berisik.</p>
   </section>
 
+  <!-- Produk -->
   <section class="section" id="produk">
     <h2>Produk Andalan</h2>
     <p>MANLY — signature parfum pertama kami, dengan aroma woody-aromatic yang tahan lama dan mencerminkan kekuatan tanpa perlu membuktikan apa pun.</p>
   </section>
 
+  <!-- Footer -->
   <footer>
     &copy; 2025 LELAKI.MEN | All rights reserved
   </footer>
 
+  <!-- Script: Header auto hide -->
   <script>
     let lastScroll = 0;
     const navbar = document.getElementById("navbar");
@@ -159,10 +181,8 @@
     window.addEventListener("scroll", () => {
       const currentScroll = window.pageYOffset;
       if (currentScroll > lastScroll && currentScroll > 80) {
-        // Scroll ke bawah
         navbar.classList.add("hide-header");
       } else {
-        // Scroll ke atas
         navbar.classList.remove("hide-header");
       }
       lastScroll = currentScroll;
@@ -170,4 +190,5 @@
   </script>
 
 </body>
-</html>
+  </html>
+  
