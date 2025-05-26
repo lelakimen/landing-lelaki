@@ -13,15 +13,22 @@
       color: #fff;
       line-height: 1.6;
     }
+
+    /* HEADER */
     header {
       padding: 20px 40px;
       display: flex;
       justify-content: space-between;
       align-items: center;
       background: #111;
-      position: sticky;
+      position: fixed;
       top: 0;
+      width: 100%;
       z-index: 100;
+      transition: top 0.4s;
+    }
+    .hide-header {
+      top: -100px;
     }
     .logo {
       font-size: 24px;
@@ -38,8 +45,9 @@
     nav a:hover {
       color: white;
     }
+
     .hero {
-      min-height: 90vh;
+      min-height: 100vh;
       background: url('https://images.unsplash.com/photo-1600180758890-6b94519b8d47?ixlib=rb-4.0.3&auto=format&fit=crop&w=1650&q=80') center/cover no-repeat;
       display: flex;
       align-items: center;
@@ -76,8 +84,9 @@
     .cta-btn:hover {
       background: #e6e6e6;
     }
+
     .section {
-      padding: 60px 30px;
+      padding: 80px 30px;
       text-align: center;
       max-width: 900px;
       margin: auto;
@@ -90,6 +99,7 @@
       font-size: 18px;
       color: #ccc;
     }
+
     footer {
       padding: 20px;
       text-align: center;
@@ -110,7 +120,8 @@
   </style>
 </head>
 <body>
-  <header>
+
+  <header id="navbar">
     <div class="logo">LELAKI.MEN</div>
     <nav>
       <a href="#about">Tentang</a>
@@ -140,6 +151,23 @@
   <footer>
     &copy; 2025 LELAKI.MEN | All rights reserved
   </footer>
+
+  <script>
+    let lastScroll = 0;
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll > lastScroll && currentScroll > 80) {
+        // Scroll ke bawah
+        navbar.classList.add("hide-header");
+      } else {
+        // Scroll ke atas
+        navbar.classList.remove("hide-header");
+      }
+      lastScroll = currentScroll;
+    });
+  </script>
+
 </body>
 </html>
-
