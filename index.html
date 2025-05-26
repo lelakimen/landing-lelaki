@@ -46,24 +46,19 @@
       display: none;
     }
 
-    nav {
+    .nav-desktop {
       display: flex;
       gap: 20px;
     }
 
-    nav a {
+    .nav-desktop a {
       color: #ccc;
       text-decoration: none;
       font-size: 16px;
     }
 
-    nav a:hover {
+    .nav-desktop a:hover {
       color: white;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
     }
 
     .nav-mobile {
@@ -80,6 +75,12 @@
 
     .nav-mobile a {
       margin: 8px 0;
+      color: #ccc;
+      text-decoration: none;
+    }
+
+    .nav-mobile a:hover {
+      color: white;
     }
 
     .hero {
@@ -162,16 +163,11 @@
     }
 
     @media (max-width: 768px) {
-      nav {
+      .nav-desktop {
         display: none;
       }
-
       .menu-toggle {
         display: block;
-      }
-
-      .nav-mobile {
-        display: flex;
       }
     }
   </style>
@@ -181,7 +177,7 @@
   <header id="navbar">
     <div class="logo">LELAKI.MEN</div>
     <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-    <nav class="nav-links">
+    <nav class="nav-desktop">
       <a href="#about">Tentang</a>
       <a href="#produk">Produk</a>
       <a href="https://instagram.com/lelaki.men" target="_blank">Instagram</a>
