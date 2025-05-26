@@ -20,6 +20,41 @@
       color: #fff;
       line-height: 1.6;
     }
+    
+
+.floating-menu {
+  position: fixed;
+  top: 100px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 15px 20px;
+  border-radius: 12px;
+  z-index: 999;
+  animation: floatMenu 3s ease-in-out infinite;
+}
+
+.floating-menu a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: Arial, sans-serif;
+  transition: transform 0.3s;
+}
+
+.floating-menu a:hover {
+  transform: scale(1.1);
+  color: #ffd700;
+}
+
+/* Animasi melayang-layang */
+@keyframes floatMenu {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
 
     header {
       padding: 20px 40px;
@@ -207,6 +242,15 @@
       <a href="https://instagram.com/lelaki.men" target="_blank" onclick="toggleMenu()">Instagram</a>
     </div>
   </header>
+
+  <div class="floating-menu">
+  <a href="#">LELAKI.MEN</a>
+  <a href="#">Parfum Premium</a>
+  <a href="#">Gaya Hidup</a>
+  <a href="#">Tips Maskulin</a>
+  <a href="#">Hubungi Kami</a>
+
+</div>
 
   <section class="hero">
     <div class="hero-content">
