@@ -24,47 +24,48 @@
 
 
 
-
-/* Loader screen full overlay */
+/* Loading screen full */
 #loader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 90vh;
-  background-color: #000; /* bisa diganti warna lain */
+  background-color: #000;
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999999; /* pastikan lebih tinggi dari header/nav */
-  transition: opacity 1s ease;
-  pointer-events: all;
+  z-index: 999999;
+  animation: fadeInOut 3s ease forwards;
 }
 
 #loader img {
-  width: 150px;
+  width: 140px;
   height: auto;
-  animation: zoomFade 2.5s ease;
+  opacity: 0;
+  animation: logoFade 3s ease forwards;
 }
 
-@keyframes zoomFade {
-  0% {
-    transform: scale(0.5);
-    opacity: 0;
-  }
-  50% {
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
+/* Animasi logo muncul, diam, lalu menghilang */
+@keyframes logoFade {
+  0% { opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+/* Untuk layar hitam juga ikut fade */
+@keyframes fadeInOut {
+  0% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { opacity: 0; }
 }
 
 body.loading {
   overflow: hidden;
 }
+
+
 
 
 
@@ -321,22 +322,18 @@ body.loading {
   </script>
 
 
-    
-<script>
-  // Tambahkan class loading di awal
+    <script>
   document.body.classList.add('loading');
 
   window.addEventListener("load", () => {
     setTimeout(() => {
       const loader = document.getElementById("loader");
-      loader.style.opacity = 0;
-      setTimeout(() => {
-        loader.style.display = "none";
-        document.body.classList.remove('loading');
-      }, 1000); // tunggu transisi selesai
-    }, 3000); // waktu loading: 3 detik
+      loader.style.display = "none";
+      document.body.classList.remove('loading');
+    }, 3100); // sedikit lebih dari durasi animasi
   });
 </script>
+
 
 </body>
 </html>
