@@ -23,27 +23,48 @@
     
 
 
-.floating-instagram {
+
+
+/* Loader screen style */
+#loader {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 1000;
-  background-color: transparent;
-  padding: 10px;
-  border-radius: 50%;
-  transition: transform 0.3s ease;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000; /* atau sesuai warna branding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 1s ease;
 }
 
-.floating-instagram:hover {
-  transform: scale(1.1);
+#loader img {
+  width: 120px;
+  height: auto;
+  animation: zoomFade 2.5s ease;
 }
 
-.floating-instagram img {
-  width: 40px;
-  height: 40px;
-  filter: brightness(0) invert(1); /* ub
-ah jadi putih */
+@keyframes zoomFade {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
+
+bo
+dy.loading {
+  overflow: hidden;
+}
+
+
 
 
 
@@ -214,7 +235,10 @@ ah jadi putih */
   </style>
 </head>
 <body>
-
+  <!-- Loading Screen -->
+<div id="loader">
+  <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEi7abyGMUpxb5MzsHW8d47_Q3fievMMURjfEMpnmKXspQCRdkeVVPKVY_wW06VYIS8x1PKzQtegERWuHJDkcAscq7B0yk4VPmtOz3UXt13285_ws5QHhXTRUejunjs2ZT3u9Arg0G3t17JkVWS6gQSixK9cQ5qlufuJw530Pq7xlgUg6BCvKz8YLBnzSHo/s1600/IMG_20250321_062128.png" alt="Logo LELAKI.MEN">
+</div>
   <header id="navbar">
     
       <div class="logo">
@@ -292,9 +316,23 @@ ah jadi putih */
     }
   </script>
 
-  <a href="https://instagram.com/lelaki.men" class="floating-instagram" target="_blank" aria-label="Instagram LELAKI.MEN">
-  <img src="https://www.pngfind.com/pngs/m/277-2773517_instagram-logo-white-logo-instagram-png-putih-transparent.png " alt="Instagram Icon">
-  </a>
+
+    
+<script>
+  // Tambahkan class loading di awal
+  document.body.classList.add('loading');
+
+  window.addEventListener("load", () => {
+    setTimeout(() => {
+      const loader = document.getElementById("loader");
+      loader.style.opacity = 0;
+      setTimeout(() => {
+        loader.style.display = "none";
+        document.body.classList.remove('loading');
+      }, 1000); // tunggu transisi selesai
+    }, 3000); // waktu loading: 3 detik
+  });
+</script>
 
 </body>
 </html>
