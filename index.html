@@ -22,6 +22,28 @@
     }
     
 
+.floating-instagram {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #fff;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.floating-instagram:hover {
+  transform: scale(1.1);
+}
+
+.floating-instagram img {
+  width: 40px;
+  height: 40px;
+  obj
+ect-fit: contain;
+}
 
 
 
@@ -269,6 +291,10 @@
       menu.style.display = menu.style.display === "flex" ? "none" : "flex";
     }
   </script>
+
+  <a href="https://instagram.com/lelaki.men" class="floating-instagram" target="_blank" aria-label="Instagram LELAKI.MEN">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Icon">
+</a>
 
 </body>
 </html>
