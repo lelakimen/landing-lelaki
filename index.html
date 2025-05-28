@@ -70,7 +70,7 @@ body.loading {
 .produk-unggulan {
   text-align: center;
   padding: 60px 20px;
-  background-color: #f9f9f9;
+  background-color: #000000;
 }
 .slider-container {
   display: flex;
@@ -430,6 +430,31 @@ body.loading {
       document.body.classList.remove('loading');
     }, 3100); // sedikit lebih dari durasi animasi
   });
+</script>
+<script>
+const produk = [
+  {
+    title: "Parfum Manly 50ml",
+    desc: "Aroma maskulin, segar, dan tahan lama. Cocok untuk pria aktif dan berkelas."
+  },
+  {
+    title: "Parfum Gentle Breeze",
+    desc: "Perpaduan aroma citrus dan kayu yang ringan namun memikat."
+  },
+  {
+    title: "Parfum Noir Oud",
+    desc: "Wangi deep & bold untuk pria misterius dan berkarakter kuat."
+  }
+];
+
+function showPopup(index) {
+  document.getElementById('popup-title').innerText = produk[index].title;
+  document.getElementById('popup-desc').innerText = produk[index].desc;
+  document.getElementById('popup').style.display = 'flex';
+}
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
 </script>
 
 
