@@ -480,11 +480,10 @@ function closePopup() {
   document.getElementById('popup').style.display = 'none';
 }
 
-function openPopup(event) {
-  event.stopPropagation(); // mencegah bubbling ke parent
-  document.querySelector('.popup').style.display = 'block';
+function closePopup() {
+  document.querySelector('.popup').style.display = 'none';
 }
-</script>
+
 
 
 </body>
