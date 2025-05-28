@@ -117,14 +117,16 @@ body.loading {
     }
 
     .popup-content {
-  position: relative; /* penting agar close button ikut dalam kotaknya */
+      position: relative;
   background: black;
-  padding: 20px;
-  border-radius: 10px;
+  padding: 30px;
+  border-radius: 12px;
   width: 90%;
-  max-width: 500px;
+  max-width: 400px;
+  text-align: center;
   box-shadow: 0 5px 20px rgba(0,0,0,0.2);
 }
+    
 
 .popup-content .close {
   position: absolute;
@@ -469,6 +471,9 @@ function showPopup(index) {
   document.getElementById('popup').style.display = 'flex';
 }
   
+function closePopup() {
+  document.getElementById('popup').style.display = 'none';
+}
 </script>
 
 
