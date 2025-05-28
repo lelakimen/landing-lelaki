@@ -353,7 +353,7 @@ body.loading {
 <section class="produk-unggulan">
   <h3>Produk Unggulan</h3>
   <div class="slider-container">
-    <button onclick="openPopup(event)">Detail</button>
+    
     <div class="slide" onclick="showPopup(0)">
       <img src="https://i.imgur.com/Gsq0PBP.jpeg " alt="Logo lelaki.men">
     </a>
@@ -477,7 +477,7 @@ function showPopup(index) {
 function closePopup() {
   document.getElementById('popup').style.display = 'none';
 }
-  
+  <button onclick="openPopup(event)">Detail</button>
 function openPopup(event) {
   event.stopPropagation(); // mencegah bubbling ke parent
   document.querySelector('.popup').style.display = 'block';
