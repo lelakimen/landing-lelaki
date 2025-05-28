@@ -365,6 +365,8 @@ body.loading {
     <div class="slide" onclick="showPopup(2)">
       <img src="https://via.placeholder.com/300x400" alt="Produk 3">
       <button class="detail-btn">Detail</button>
+      <button onclick="openPopup(event)">Detail</button>
+
     </div>
   </div>
 </section>
@@ -473,6 +475,11 @@ function showPopup(index) {
   
 function closePopup() {
   document.getElementById('popup').style.display = 'none';
+}
+  
+function openPopup(event) {
+  event.stopPropagation(); // mencegah bubbling ke parent
+  document.querySelector('.popup').style.display = 'block';
 }
 </script>
 
